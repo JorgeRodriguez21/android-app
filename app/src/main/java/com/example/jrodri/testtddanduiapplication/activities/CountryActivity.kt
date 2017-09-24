@@ -55,7 +55,7 @@ class CountryActivity : AppCompatActivity() {
 
     private fun initializeAdapter() {
         countryRV.layoutManager = LinearLayoutManager(this)
-        countryRecyclerAdapter = CountryRecyclerAdapter(this, countries.filter { x -> (x.largestCity != null && !x.largestCity.isEmpty()) }, countryRV)
+        countryRecyclerAdapter = CountryRecyclerAdapter(this, countries.filter { it.largestCity != null && !it.largestCity.isEmpty() }, countryRV)
         countryRecyclerAdapter.setClickListener { v ->
             val selectedCountry = v.tag as Country
             val messageText = buildMessage(selectedCountry)
@@ -65,9 +65,7 @@ class CountryActivity : AppCompatActivity() {
     }
 
 
-    private fun buildMessage(selectedCountry: Country): String {
-        return "Capital: " + selectedCountry.capital + " Largest City:" + selectedCountry.largestCity +
-                " Country:" + selectedCountry.country
-    }
+    private fun buildMessage(selectedCountry: Country): String =
+            "Capital: ${selectedCountry.capital} Largest City:${selectedCountry.largestCity} Country:${selectedCountry.country}"
 
 }
