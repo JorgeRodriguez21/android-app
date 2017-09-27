@@ -10,8 +10,6 @@ import com.raizlabs.android.dbflow.annotation.Database;
 //https://guides.codepath.com/android/DBFlow-Guide
 @Database(name = TestApplicationDatabase.NAME, version = TestApplicationDatabase.VERSION)
 public class TestApplicationDatabase {
-
     public static final String NAME = "TestApplicationDatabase";
-
     public static final int VERSION = 1;
 }

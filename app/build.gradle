@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
 
-def dbFlow_version = "4.0.3"
+def dbFlow_version = "4.1.1"
 
 android {
     compileSdkVersion 25
@@ -24,6 +24,7 @@ android {
 }
 
 dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -35,14 +36,13 @@ dependencies {
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.android.support:recyclerview-v7:25.3.1'
     kapt 'com.jakewharton:butterknife-compiler:8.8.0'
-    annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:${dbFlow_version}"
+    kapt "com.github.Raizlabs.DBFlow:dbflow-processor:${dbFlow_version}"
     compile "com.github.Raizlabs.DBFlow:dbflow-core:${dbFlow_version}"
     compile "com.github.Raizlabs.DBFlow:dbflow:${dbFlow_version}"
 
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:2.7.22'
     androidTestCompile 'org.mockito:mockito-android:2.7.22'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 repositories {
     mavenCentral()

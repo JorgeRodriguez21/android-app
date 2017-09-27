@@ -1,6 +1,9 @@
 package com.example.jrodri.testtddanduiapplication.models;
 
+import android.os.Parcelable;
+
 import com.example.jrodri.testtddanduiapplication.databases.TestApplicationDatabase;
+import com.google.gson.annotations.SerializedName;
 import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
